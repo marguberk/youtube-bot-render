@@ -9,14 +9,14 @@ RUN apt-get update && \
 WORKDIR /app
 
 # Копирование файлов проекта
-COPY requirements.txt .
-COPY bot.py .
+COPY . .
 
 # Создание директории для временных файлов
-RUN mkdir tmp
+RUN mkdir -p tmp && \
+    chmod 777 tmp
 
 # Установка зависимостей
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Запуск бота
-CMD ["python", "bot.py"] 
+# Запуск бота в режиме worker
+ENTRYPOINT ["python", "bot.py"] 

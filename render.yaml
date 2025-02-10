@@ -2,8 +2,10 @@ services:
   - type: worker
     name: youtube-mp3-bot
     env: docker
+    region: frankfurt  # или другой ближайший регион
     buildCommand: docker build -t youtube-mp3-bot .
-    startCommand: docker run youtube-mp3-bot
+    startCommand: docker run --rm youtube-mp3-bot
     envVars:
       - key: BOT_TOKEN
-        value: "7871806593:AAF0d3grjeT7Is9PabfZYwKUTj77FCqkksU" 
+        value: "7871806593:AAF0d3grjeT7Is9PabfZYwKUTj77FCqkksU"
+    autoDeploy: true 
