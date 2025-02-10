@@ -1,9 +1,9 @@
 services:
-  - type: worker
+  - type: web
     name: youtube-mp3-bot
-    env: python
-    buildCommand: apt-get update && apt-get install -y ffmpeg && pip install -r requirements.txt
-    startCommand: python bot.py
+    env: docker
+    buildCommand: docker build -t youtube-mp3-bot .
+    startCommand: docker run youtube-mp3-bot
     envVars:
       - key: BOT_TOKEN
         value: "7871806593:AAF0d3grjeT7Is9PabfZYwKUTj77FCqkksU" 
