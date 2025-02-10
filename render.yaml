@@ -1,5 +1,5 @@
 services:
-  - type: web
+  - type: worker
     name: youtube-mp3-bot
     env: docker
     buildCommand: docker build -t youtube-mp3-bot .
