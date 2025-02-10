@@ -3,13 +3,10 @@ import telebot
 from yt_dlp import YoutubeDL
 from urllib.parse import urlparse
 import re
-import locale
 
 # Получаем токен из переменной окружения
 BOT_TOKEN = os.getenv('BOT_TOKEN')
 bot = telebot.TeleBot(BOT_TOKEN)
-
-locale.setlocale(locale.LC_ALL, 'ru_RU.UTF-8')
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
