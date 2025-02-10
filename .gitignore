@@ -1,0 +1,12 @@
+# Временные файлы
+tmp/
+*.mp3
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+
+# Системные файлы
+.DS_Store 
